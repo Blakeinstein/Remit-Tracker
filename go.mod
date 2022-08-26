@@ -1,4 +1,4 @@
-module golang-rest-api-starter
+module remit_tracker_server 
 
 go 1.17
 

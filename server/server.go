@@ -1,8 +1,8 @@
 package server
 
 import (
-	"golang-rest-api-starter/config"
 	"log"
+	"remit_tracker_server/config"
 )
 
 func Init() {

@@ -4,8 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"golang-rest-api-starter/config"
-	"golang-rest-api-starter/server"
+	"remit_tracker_server/config"
+	"remit_tracker_server/server"
 )
 
 func main() {
