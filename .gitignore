@@ -3,6 +3,7 @@ Spider/build
 Spider/project.egg-info
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.env.local
 
 # dependencies
 /node_modules
