@@ -1,1 +1,3 @@
 project: 617855
+stacks:
+  default: scrapy:2.6

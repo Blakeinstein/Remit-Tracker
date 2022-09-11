@@ -1,6 +1,5 @@
 import scrapy
 
-# -H 'content-type: application/json' --data-raw '[{"index":"form","product_code":"PC","currency_code":"USD","order_type":"B","city":null}]' 
 class BmfSpider(scrapy.Spider):
     name = 'bmf'
     def start_requests(self):
@@ -19,6 +18,6 @@ class BmfSpider(scrapy.Spider):
     def parse(self, response):
         data = response.json()
         yield {
-            'remit': data.get('result')[0].get('rate'),
-            'forex': data.get('result')[1].get('rate')
+            'remit': float(data.get('result')[0].get('rate')),
+            'forex': float(data.get('result')[1].get('rate'))
         }
