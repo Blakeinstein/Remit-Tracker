@@ -2,7 +2,7 @@
 name = "attrs"
 version = "22.1.0"
 description = "Classes Without Boilerplate"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -16,7 +16,7 @@ tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy 
 name = "Automat"
 version = "20.2.0"
 description = "Self-service finite-state machines for the programmer on the go."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -31,7 +31,7 @@ visualize = ["Twisted (>=16.1.1)", "graphviz (>0.5.1)"]
 name = "certifi"
 version = "2022.6.15.1"
 description = "Python package for providing Mozilla's CA Bundle."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -39,7 +39,7 @@ python-versions = ">=3.6"
 name = "cffi"
 version = "1.15.1"
 description = "Foreign Function Interface for Python calling C code."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -50,7 +50,7 @@ pycparser = "*"
 name = "charset-normalizer"
 version = "2.1.1"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.0"
 
@@ -61,7 +61,7 @@ unicode_backport = ["unicodedata2"]
 name = "constantly"
 version = "15.1.0"
 description = "Symbolic constants in Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -69,7 +69,7 @@ python-versions = "*"
 name = "cryptography"
 version = "38.0.1"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -88,7 +88,7 @@ test = ["hypothesis (>=1.11.4,!=3.79.2)", "iso8601", "pretend", "pytest (>=6.2.0
 name = "cssselect"
 version = "1.1.0"
 description = "cssselect parses CSS3 Selectors and translates them to XPath 1.0"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -96,7 +96,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "filelock"
 version = "3.8.0"
 description = "A platform independent file lock."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -108,7 +108,7 @@ testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pyt
 name = "hyperlink"
 version = "21.0.0"
 description = "A featureful, immutable, and correct URL for Python."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -119,7 +119,7 @@ idna = ">=2.5"
 name = "idna"
 version = "3.3"
 description = "Internationalized Domain Names in Applications (IDNA)"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -127,7 +127,7 @@ python-versions = ">=3.5"
 name = "incremental"
 version = "21.3.0"
 description = "A small library that versions your Python projects."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -138,7 +138,7 @@ scripts = ["click (>=6.0)", "twisted (>=16.4.0)"]
 name = "itemadapter"
 version = "0.7.0"
 description = "Common interface for data container classes"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -146,7 +146,7 @@ python-versions = ">=3.6"
 name = "itemloaders"
 version = "1.0.6"
 description = "Base library for scrapy's ItemLoader"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -160,7 +160,7 @@ w3lib = ">=1.17.0"
 name = "jmespath"
 version = "1.0.1"
 description = "JSON Matching Expressions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -168,7 +168,7 @@ python-versions = ">=3.7"
 name = "lxml"
 version = "4.9.1"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, != 3.4.*"
 
@@ -182,7 +182,7 @@ source = ["Cython (>=0.29.7)"]
 name = "parsel"
 version = "1.6.0"
 description = "Parsel is a library to extract data from HTML and XML using XPath and CSS selectors"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -196,7 +196,7 @@ w3lib = ">=1.19.0"
 name = "Protego"
 version = "0.2.1"
 description = "Pure-Python robots.txt parser with support for modern conventions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -207,7 +207,7 @@ six = "*"
 name = "pyasn1"
 version = "0.4.8"
 description = "ASN.1 types and codecs"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -215,7 +215,7 @@ python-versions = "*"
 name = "pyasn1-modules"
 version = "0.2.8"
 description = "A collection of ASN.1-based protocols modules."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -226,7 +226,7 @@ pyasn1 = ">=0.4.6,<0.5.0"
 name = "pycparser"
 version = "2.21"
 description = "C parser in Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
@@ -234,7 +234,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 name = "PyDispatcher"
 version = "2.0.6"
 description = "Multi-Producer Multi-Consumer Observer Pattern for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -242,7 +242,7 @@ python-versions = "*"
 name = "pyOpenSSL"
 version = "22.0.0"
 description = "Python wrapper module around the OpenSSL library"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -257,7 +257,7 @@ test = ["flaky", "pretend", "pytest (>=3.0.1)"]
 name = "PyPyDispatcher"
 version = "2.1.2"
 description = "Multi-producer-multi-consumer signal dispatching mechanism"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -265,7 +265,7 @@ python-versions = "*"
 name = "queuelib"
 version = "1.6.2"
 description = "Collection of persistent (disk-based) and non-persistent (memory-based) queues"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -273,7 +273,7 @@ python-versions = ">=3.5"
 name = "requests"
 version = "2.28.1"
 description = "Python HTTP for Humans."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7, <4"
 
@@ -291,7 +291,7 @@ use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 name = "requests-file"
 version = "1.5.1"
 description = "File transport adapter for Requests"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -303,7 +303,7 @@ six = "*"
 name = "Scrapy"
 version = "2.6.2"
 description = "A high-level Web Crawling and Web Scraping framework"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -333,7 +333,7 @@ w3lib = ">=1.17.0"
 name = "service-identity"
 version = "21.1.0"
 description = "Service identity verification for pyOpenSSL & cryptography."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -354,7 +354,7 @@ tests = ["coverage[toml] (>=5.0.2)", "pytest"]
 name = "setuptools"
 version = "65.3.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -367,7 +367,7 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
@@ -375,7 +375,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "tldextract"
 version = "3.3.1"
 description = "Accurately separates a URL's subdomain, domain, and public suffix, using the Public Suffix List (PSL). By default, this includes the public ICANN TLDs and their exceptions. You can optionally support the Public Suffix List's private domains as well."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -389,7 +389,7 @@ requests-file = ">=1.4"
 name = "Twisted"
 version = "22.8.0"
 description = "An asynchronous networking framework written in Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7.1"
 
@@ -424,7 +424,7 @@ windows_platform = ["PyHamcrest (>=1.9.0)", "appdirs (>=1.4.0)", "bcrypt (>=3.0.
 name = "twisted-iocpsupport"
 version = "1.0.2"
 description = "An extension for use in the twisted I/O Completion Ports reactor."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -432,7 +432,7 @@ python-versions = "*"
 name = "typing-extensions"
 version = "4.3.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -440,7 +440,7 @@ python-versions = ">=3.7"
 name = "urllib3"
 version = "1.26.12"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, <4"
 
@@ -453,7 +453,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 name = "w3lib"
 version = "2.0.1"
 description = "Library of web-related functions"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -461,7 +461,7 @@ python-versions = ">=3.6"
 name = "zope.interface"
 version = "5.4.0"
 description = "Interfaces for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
@@ -476,7 +476,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "02b01128c3b0a4a5c218dbe9e6fa6236dc420e6e244cf5e052cf42ffbf47de2e"
+content-hash = "513f4134ee39fd2056906b3b87c6b3d254414677118d268bb40621e10ebd355c"
 
 [metadata.files]
 attrs = [
