@@ -1,2 +1,5 @@
 __pycache__
+Spider/build
+Spider/project.egg-info
+
 dist
