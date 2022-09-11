@@ -5,5 +5,8 @@ class FlywireSpider(scrapy.Spider):
   start_urls = ['https://remittance.flywire.com/api/v1/rates/INR']
 
   def parse(self, response):
-    print(response)
-    yield 0
+    data = response.json().get('USD')
+    yield {
+      'remit': data.get('remittance'),
+      'forex': data.get('forexcard'),
+    }
