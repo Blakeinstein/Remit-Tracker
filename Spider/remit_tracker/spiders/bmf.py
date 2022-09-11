@@ -1,4 +1,5 @@
 import scrapy
+import time
 
 class BmfSpider(scrapy.Spider):
     name = 'bmf'
@@ -18,6 +19,10 @@ class BmfSpider(scrapy.Spider):
     def parse(self, response):
         data = response.json()
         yield {
-            'remit': float(data.get('result')[0].get('rate')),
-            'forex': float(data.get('result')[1].get('rate'))
+            'name': self.name,
+            'timestamp': int(time.time()),
+            'data': {
+                'remit': float(data.get('result')[0].get('rate')),
+                'forex': float(data.get('result')[1].get('rate'))
+            }
         }
