@@ -24,7 +24,10 @@ const themes = [
 
 const ThemeSelect = () => {
   return (
-    <select data-choose-theme className="select select-bordered">
+    <select
+      data-choose-theme
+      className="select select-bordered select-sm text-sm"
+    >
       {themes.map((theme) => (
         <option value={theme} key={theme}>
           {theme}

@@ -20,19 +20,26 @@
   "dependencies": {
     "@fontsource/plus-jakarta-sans": "^4.5.9",
     "@headlessui/react": "^1.6.6",
+    "chart.js": "^3.9.1",
+    "chartjs-adapter-luxon": "^1.2.0",
+    "classnames": "^2.3.1",
     "clsx": "^1.2.1",
+    "luxon": "^3.0.3",
     "next": "^12.2.5",
     "next-pwa": "^5.5.5",
     "next-seo": "^5.5.0",
     "react": "17.0.2",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "17.0.2",
     "react-icons": "^4.4.0",
-    "theme-change": "^2.2.0"
+    "theme-change": "^2.2.0",
+    "uniqolor": "^1.0.2"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^16.2.4",
     "@commitlint/cz-commitlint": "^16.3.0",
     "@tailwindcss/typography": "^0.5.4",
+    "@types/luxon": "^3.0.1",
     "@types/react": "17.0.39",
     "@types/tailwindcss": "^3.1.0",
     "autoprefixer": "^10.4.8",

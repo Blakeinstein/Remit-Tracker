@@ -1,11 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="wrapper">
-      <div className="flex">
+    <footer className="sticky bottom-0 mb-2 w-screen">
+      <div className="wrapper mx-auto flex">
         <p>
           {new Date().getFullYear()} -{" "}
-          <a href="https://sznm.dev" target="_blank" rel="noopener noreferrer">
-            sznm.dev
+          <a
+            href="https://blaine.is-a.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            blaine.is-a.dev
           </a>
         </p>
       </div>
