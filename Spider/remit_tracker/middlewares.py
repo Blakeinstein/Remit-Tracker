@@ -3,6 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+import time
 from scrapy import signals
 
 # useful for handling different item types with a single interface
@@ -36,6 +37,7 @@ class RemitTrackerSpiderMiddleware:
         for i in result:
             yield {
                 'name': spider.name,
+                'timestamp': time.time(),
                 'data': i,
             }
 

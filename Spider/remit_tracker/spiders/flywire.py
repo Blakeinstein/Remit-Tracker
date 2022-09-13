@@ -1,5 +1,4 @@
 import scrapy
-import time
 
 class FlywireSpider(scrapy.Spider):
   name = "flywire"

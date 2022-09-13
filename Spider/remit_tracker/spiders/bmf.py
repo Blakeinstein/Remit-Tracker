@@ -1,5 +1,4 @@
 import scrapy
-import time
 
 class BmfSpider(scrapy.Spider):
     name = 'bmf'
