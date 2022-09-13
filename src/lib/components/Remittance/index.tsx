@@ -33,7 +33,7 @@ ChartJS.register(
   Legend
 );
 
-const TimeScales = ["day", "hour", "week", "month", "quarter", "year"] as const;
+const TimeScales = ["day", "hour", "week", "month"] as const;
 
 type TimeScale = typeof TimeScales[number];
 
@@ -167,6 +167,7 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
             </button>
           </div>
         </div>
+        <p className="text-secondary">Data is retained for 4 months.</p>
         <Line data={lineData} options={options} />
       </div>
     </div>
