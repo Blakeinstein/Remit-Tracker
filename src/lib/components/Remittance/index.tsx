@@ -15,12 +15,7 @@ import { useState } from "react";
 import { Line } from "react-chartjs-2";
 import uniqolor from "uniqolor";
 
-import type {
-  RemitSource,
-  FilteredSources,
-  Accessors,
-  Provider,
-} from "lib/types/Remit";
+import type { FilteredSources, Accessors, Provider } from "lib/types/Remit";
 import { formatProvider, formatAccessor } from "lib/utils/Remit";
 
 ChartJS.register(
@@ -33,33 +28,18 @@ ChartJS.register(
   Legend
 );
 
-const TimeScales = ["day", "hour", "week", "month"] as const;
+const TimeScales = ["hour", "day", "week", "month"] as const;
 
 type TimeScale = typeof TimeScales[number];
 
-const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
+const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
   const [timeUnit, setTimeUnit] = useState<TimeScale>("hour");
 
   const [accessor, setAccessor] = useState<Accessors>("remit");
 
-  const sources = data.reduce((acc, curr) => {
-    if (curr.name) {
-      if (acc[curr.name]) {
-        acc[curr.name].push(curr);
-      } else {
-        acc[curr.name] = [curr];
-      }
-    }
-    return acc;
-  }, {} as FilteredSources);
-
-  (Object.keys(sources) as Provider[]).forEach((source) => {
-    sources[source] = sources[source].sort((a, b) => b.timestamp - a.timestamp);
-  });
-
   const lineData = {
-    datasets: Object.entries(sources)
-      .filter(([, remit]) => remit[0].data[accessor])
+    datasets: Object.entries(data)
+      .filter(([, remit]) => remit[0]?.data[accessor])
       .map(([name, remit]) => ({
         label: formatProvider(name as Provider),
         data: remit.map((r) => ({
@@ -113,10 +93,10 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
   const id = "remittance";
 
   return (
-    <div className="flex min-h-[75vh] w-screen flex-col items-center justify-center gap-4">
+    <div className="flex min-h-[75vh] w-screen flex-col items-center justify-center gap-8">
       <div className="stats stats-vertical bg-primary text-primary-content sm:stats-horizontal">
-        {Object.entries(sources).map(([name, remit]) => {
-          if (remit[0].data[accessor]) {
+        {Object.entries(data).map(([name, remit]) => {
+          if (remit[0]?.data[accessor]) {
             return (
               <div className="stat sm:w-52" key={name}>
                 <div className="stat-title capitalize">
@@ -131,7 +111,7 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
           return null;
         })}
       </div>
-      <div className="flex w-72 min-w-[80vw] flex-col items-center gap-2">
+      <div className="flex w-72 min-w-[80vw] flex-col items-center gap-6">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <div className="form-control">
             <label
