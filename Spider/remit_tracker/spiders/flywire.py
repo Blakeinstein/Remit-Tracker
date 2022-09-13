@@ -7,11 +7,7 @@ class FlywireSpider(scrapy.Spider):
 
   def parse(self, response):
     data = response.json().get('USD')
-    yield {
-      'name': self.name,
-      'timestamp': int(time.time()),
-      'data': {        
+    yield {        
         'remit': data.get('remittance'),
         'forex': data.get('forexcard'),
       }
-    }

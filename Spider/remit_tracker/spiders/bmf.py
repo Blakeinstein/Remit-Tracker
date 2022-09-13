@@ -19,10 +19,6 @@ class BmfSpider(scrapy.Spider):
     def parse(self, response):
         data = response.json()
         yield {
-            'name': self.name,
-            'timestamp': int(time.time()),
-            'data': {
                 'remit': float(data.get('result')[0].get('rate')),
                 'forex': float(data.get('result')[1].get('rate'))
             }
-        }
