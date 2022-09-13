@@ -1,4 +1,4 @@
-import type { NextPage, GetServerSideProps } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
 
 import Remittance from "lib/components/Remittance";
@@ -18,13 +18,7 @@ type IndexProps = {
   data: RemitSource[];
 };
 
-export const getServerSideProps: GetServerSideProps<IndexProps> = async ({
-  res,
-}) => {
-  res.setHeader(
-    "Cache-Control",
-    `public, s-maxage=${60 * 60}, stale-while-revalidate=${2 * 60 * 60}`
-  );
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   const resp = await fetch(
     `https://storage.scrapinghub.com/items/${process.env.ZYTE_PROJECT_ID}`,
     options
@@ -37,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<IndexProps> = async ({
         .map((d) => JSON.parse(d) as RemitSource)
     );
   return {
-    props: { data: resp },
+    props: { data: resp, revalidate: 60 * 60 },
   };
 };
 
