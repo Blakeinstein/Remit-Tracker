@@ -18,18 +18,26 @@ type IndexProps = {
   data: RemitSource[];
 };
 
-export const getServerSideProps: GetServerSideProps<IndexProps> = async () => {
+export const getServerSideProps: GetServerSideProps<IndexProps> = async ({
+  res,
+}) => {
+  res.setHeader(
+    "Cache-Control",
+    `public, s-maxage=${60 * 60}, stale-while-revalidate=${2 * 60 * 60}`
+  );
   const resp = await fetch(
     `https://storage.scrapinghub.com/items/${process.env.ZYTE_PROJECT_ID}`,
     options
-  ).then((data) => data.text());
-
-  const res = resp
-    .split(/\r?\n/)
-    .filter((d) => d)
-    .map((d) => JSON.parse(d) as RemitSource);
+  )
+    .then((data) => data.text())
+    .then((data) =>
+      data
+        .split(/\r?\n/)
+        .filter((d) => d)
+        .map((d) => JSON.parse(d) as RemitSource)
+    );
   return {
-    props: { data: res },
+    props: { data: resp },
   };
 };
 

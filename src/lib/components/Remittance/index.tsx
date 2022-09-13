@@ -38,7 +38,7 @@ const TimeScales = ["day", "hour", "week", "month", "quarter", "year"] as const;
 type TimeScale = typeof TimeScales[number];
 
 const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
-  const [timeUnit, setTimeUnit] = useState<TimeScale>("day");
+  const [timeUnit, setTimeUnit] = useState<TimeScale>("hour");
 
   const [accessor, setAccessor] = useState<Accessors>("remit");
 
