@@ -1,11 +1,11 @@
-export const Providers = ["bmf", "flywire"] as const;
+export const Providers = ["bmf", "flywire", "zolve"] as const;
 export type Provider = typeof Providers[number];
 export interface RemitSource {
   name: Provider;
   timestamp: number;
   data: {
-    remit: number;
-    forex: number;
+    remit?: number;
+    forex?: number;
   };
 }
 

@@ -16,6 +16,8 @@ export const formatProvider = (provider: Provider) => {
       return "Book My Forex";
     case "flywire":
       return "Flywire";
+    case "zolve":
+      return "Zolve";
     default:
       return "Unknown";
   }

@@ -58,14 +58,16 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
   });
 
   const lineData = {
-    datasets: Object.entries(sources).map(([name, remit]) => ({
-      label: formatProvider(name as Provider),
-      data: remit.map((r) => ({
-        x: new Date(r.timestamp * 1000),
-        y: r.data[accessor],
+    datasets: Object.entries(sources)
+      .filter(([, remit]) => remit[0].data[accessor])
+      .map(([name, remit]) => ({
+        label: formatProvider(name as Provider),
+        data: remit.map((r) => ({
+          x: new Date(r.timestamp * 1000),
+          y: r.data[accessor],
+        })),
+        borderColor: uniqolor(btoa(formatProvider(name as Provider))).color,
       })),
-      borderColor: uniqolor(btoa(formatProvider(name as Provider))).color,
-    })),
   };
 
   const formatter = new Intl.NumberFormat("en-IN", {
@@ -113,16 +115,21 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
   return (
     <div className="flex min-h-[75vh] w-screen flex-col items-center justify-center gap-4">
       <div className="stats stats-vertical bg-primary text-primary-content sm:stats-horizontal">
-        {Object.entries(sources).map(([name, remit]) => (
-          <div className="stat sm:w-52" key={name}>
-            <div className="stat-title capitalize">
-              {formatProvider(name as Provider)}
-            </div>
-            <div className="stat-value text-center">
-              {formatter.format(remit[0].data[accessor])}
-            </div>
-          </div>
-        ))}
+        {Object.entries(sources).map(([name, remit]) => {
+          if (remit[0].data[accessor]) {
+            return (
+              <div className="stat sm:w-52" key={name}>
+                <div className="stat-title capitalize">
+                  {formatProvider(name as Provider)}
+                </div>
+                <div className="stat-value text-center">
+                  {formatter.format(remit[0].data[accessor] as number)}
+                </div>
+              </div>
+            );
+          }
+          return null;
+        })}
       </div>
       <div className="flex w-72 min-w-[80vw] flex-col items-center gap-2">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
