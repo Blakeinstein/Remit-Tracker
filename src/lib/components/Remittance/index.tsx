@@ -53,6 +53,10 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
     return acc;
   }, {} as FilteredSources);
 
+  (Object.keys(sources) as Provider[]).forEach((source) => {
+    sources[source] = sources[source].sort((a, b) => b.timestamp - a.timestamp);
+  });
+
   const lineData = {
     datasets: Object.entries(sources).map(([name, remit]) => ({
       label: formatProvider(name as Provider),
@@ -63,12 +67,6 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
       borderColor: uniqolor(btoa(formatProvider(name as Provider))).color,
     })),
   };
-
-  (Object.keys(sources) as Provider[]).forEach((source) => {
-    sources[source] = sources[source]
-      .sort((a, b) => b.timestamp - a.timestamp)
-      .slice(0, 10);
-  });
 
   const formatter = new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -117,7 +115,9 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
       <div className="stats stats-vertical bg-primary text-primary-content sm:stats-horizontal">
         {Object.entries(sources).map(([name, remit]) => (
           <div className="stat sm:w-52" key={name}>
-            <div className="stat-title uppercase">{name}</div>
+            <div className="stat-title capitalize">
+              {formatProvider(name as Provider)}
+            </div>
             <div className="stat-value text-center">
               {formatter.format(remit[0].data[accessor])}
             </div>

@@ -1,4 +1,5 @@
 import type { NextPage, GetServerSideProps } from "next";
+import { NextSeo } from "next-seo";
 
 import Remittance from "lib/components/Remittance";
 import type { RemitSource } from "lib/types/Remit";
@@ -34,9 +35,12 @@ export const getServerSideProps: GetServerSideProps<IndexProps> = async () => {
 
 const Home: NextPage<IndexProps> = ({ data = [] }: IndexProps) => {
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-8 text-center">
-      <Remittance data={data} />
-    </div>
+    <>
+      <NextSeo title="Home" />
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-8 text-center">
+        <Remittance data={data} />
+      </div>
+    </>
   );
 };
 
