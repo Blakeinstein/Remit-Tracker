@@ -57,7 +57,7 @@ const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
     datasets: Object.entries(sources).map(([name, remit]) => ({
       label: formatProvider(name as Provider),
       data: remit.map((r) => ({
-        x: new Date(r.timestamp),
+        x: new Date(r.timestamp * 1000),
         y: r.data[accessor],
       })),
       borderColor: uniqolor(btoa(formatProvider(name as Provider))).color,
