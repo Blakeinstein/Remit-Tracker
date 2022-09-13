@@ -33,20 +33,12 @@ ChartJS.register(
   Legend
 );
 
-const TimeScales = [
-  "day",
-  "minute",
-  "hour",
-  "week",
-  "month",
-  "quarter",
-  "year",
-] as const;
+const TimeScales = ["day", "hour", "week", "month", "quarter", "year"] as const;
 
 type TimeScale = typeof TimeScales[number];
 
 const Remittance: React.FC<{ data: RemitSource[] }> = ({ data }) => {
-  const [timeUnit, setTimeUnit] = useState<TimeScale>("minute");
+  const [timeUnit, setTimeUnit] = useState<TimeScale>("day");
 
   const [accessor, setAccessor] = useState<Accessors>("remit");
 

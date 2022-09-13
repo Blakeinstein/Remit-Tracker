@@ -6,7 +6,7 @@ import ThemeSelect from "./ThemeSelect";
 const Header = () => {
   return (
     <header className="sticky top-0 z-10 w-screen bg-base-100/80 backdrop-blur-md">
-      <section className="wrapper mx-auto flex w-full items-center justify-between py-2">
+      <section className="flex w-full items-center justify-between px-4 py-2">
         <Link href="/" passHref>
           <a className="btn btn-ghost gap-2 text-lg font-bold">
             <FaHome /> Remittance Tracker

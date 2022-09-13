@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="sticky bottom-0 mb-2 w-screen">
+    <footer className="mb-2 w-screen">
       <div className="wrapper mx-auto flex">
         <p>
           {new Date().getFullYear()} -{" "}
