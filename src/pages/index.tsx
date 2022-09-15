@@ -53,7 +53,8 @@ export const getStaticProps: GetStaticProps<IndexProps> = async () => {
   });
 
   return {
-    props: { data: sources, revalidate: 60 * 60 },
+    props: { data: sources },
+    revalidate: 60 * 60,
   };
 };
 
