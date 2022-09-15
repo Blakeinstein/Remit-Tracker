@@ -44,10 +44,11 @@ export const getStaticProps: GetStaticProps<IndexProps> = async () => {
     sources[source] = sources[source]
       .sort((a, b) => b.timestamp - a.timestamp)
       .filter((a) => {
-        if (timeStamps.has(a.timestamp)) {
+        const ts = Math.floor(a.timestamp / (60 * 30));
+        if (timeStamps.has(ts)) {
           return false;
         }
-        timeStamps.add(a.timestamp);
+        timeStamps.add(ts);
         return true;
       });
   });

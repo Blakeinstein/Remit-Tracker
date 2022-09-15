@@ -19,7 +19,6 @@ headers = {
 body = '{"sourceCurrency":"INR","sourceAmount":"100000.00","targetCurrency":"USD"}'
 
 
-
 class ZolveSpider(scrapy.Spider):
     name = 'zolve'
     def start_requests(self):
