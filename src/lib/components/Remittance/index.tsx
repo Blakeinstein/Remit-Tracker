@@ -1,36 +1,18 @@
-import {
-  Chart as ChartJS,
-  TimeSeriesScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import "chartjs-adapter-luxon";
 import classNames from "classnames";
+import dynamic from "next/dynamic";
 import type React from "react";
 import { useState } from "react";
-import { Line } from "react-chartjs-2";
+import type { Line } from "react-chartjs-2";
 import uniqolor from "uniqolor";
 
 import type { FilteredSources, Accessors, Provider } from "lib/types/Remit";
 import { formatProvider, formatAccessor } from "lib/utils/Remit";
 
-ChartJS.register(
-  TimeSeriesScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
 const TimeScales = ["hour", "day", "week", "month"] as const;
 
 type TimeScale = typeof TimeScales[number];
+
+const ChartComponent = dynamic(() => import("./Chart"), { ssr: false });
 
 const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
   const [timeUnit, setTimeUnit] = useState<TimeScale>("hour");
@@ -86,6 +68,23 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
       title: {
         display: true,
         text: "Remittance history",
+      },
+      zoom: {
+        pan: {
+          enabled: true,
+        },
+        limits: {
+          // axis limits
+        },
+        zoom: {
+          wheel: {
+            enabled: true,
+          },
+          pinch: {
+            enabled: true,
+          },
+          mode: "xy",
+        },
       },
     },
   };
@@ -155,8 +154,8 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
           </div>
         </div>
         <p className="text-secondary">Data is retained for 4 months.</p>
-        <div className="min-h-[400px]">
-          <Line data={lineData} options={options} />
+        <div className="min-h-[400px] w-[600px] min-w-[95vw]">
+          <ChartComponent data={lineData} options={options} />
         </div>
       </div>
     </div>

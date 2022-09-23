@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="wrapper mx-auto flex justify-center text-center">
         <p className="text-info">
           {new Date().getFullYear()} - Built with{" "}
-          <FaHeart className="-mt-0.5 inline text-primary" /> by Blaine
+          <FaHeart className="mx-1 -mt-0.5 inline text-primary" /> by Blaine
           <a
             href="https://blaine.is-a.dev"
             target="_blank"
