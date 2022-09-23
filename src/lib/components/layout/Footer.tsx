@@ -1,14 +1,17 @@
+import { FaHeart } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="mb-2 w-screen">
-      <div className="wrapper mx-auto flex justify-center">
-        <p className="text-primary">
-          {new Date().getFullYear()} - Built with ❤️ by Blaine -{" "}
+      <div className="wrapper mx-auto flex justify-center text-center">
+        <p className="text-info">
+          {new Date().getFullYear()} - Built with{" "}
+          <FaHeart className="-mt-0.5 inline text-primary" /> by Blaine
           <a
             href="https://blaine.is-a.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="link"
+            className="link block"
           >
             blaine.is-a.dev
           </a>

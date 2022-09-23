@@ -56,7 +56,7 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
   });
 
   const options: React.ComponentProps<typeof Line>["options"] = {
-    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         title: {
@@ -155,7 +155,9 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
           </div>
         </div>
         <p className="text-secondary">Data is retained for 4 months.</p>
-        <Line data={lineData} options={options} />
+        <div className="min-h-[400px]">
+          <Line data={lineData} options={options} />
+        </div>
       </div>
     </div>
   );

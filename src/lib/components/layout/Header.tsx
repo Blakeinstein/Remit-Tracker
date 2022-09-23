@@ -10,11 +10,12 @@ const Header = () => {
         <div className="flex-1">
           <Link href="/" passHref>
             <a className="btn btn-ghost gap-2 text-lg font-bold">
-              <FaHome /> Remittance Tracker
+              <FaHome />
+              <span className="hidden sm:inline"> Remittance Tracker</span>
             </a>
           </Link>
         </div>
-        <div className="flex flex-none gap-4">
+        <div className="flex shrink-0 gap-2 p-1">
           <a
             type="button"
             className="btn btn-ghost btn-square"
