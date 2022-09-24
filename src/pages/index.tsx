@@ -65,9 +65,7 @@ const Home: NextPage<IndexProps> = ({
   return (
     <>
       <NextSeo title="Home" />
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-8 text-center">
-        <Remittance data={data} />
-      </div>
+      <Remittance data={data} />
     </>
   );
 };

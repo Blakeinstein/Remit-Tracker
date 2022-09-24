@@ -1,12 +1,13 @@
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import type React from "react";
-import { useState } from "react";
-import type { Line } from "react-chartjs-2";
+import { useRef, useState } from "react";
 import uniqolor from "uniqolor";
 
 import type { FilteredSources, Accessors, Provider } from "lib/types/Remit";
 import { formatProvider, formatAccessor } from "lib/utils/Remit";
+
+import type { LineProps } from "./Chart";
 
 const TimeScales = ["hour", "day", "week", "month"] as const;
 
@@ -15,6 +16,11 @@ type TimeScale = typeof TimeScales[number];
 const ChartComponent = dynamic(() => import("./Chart"), { ssr: false });
 
 const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
+  const chartRef: LineProps["ref"] = useRef(null);
+  const resetZoom = () => {
+    chartRef.current?.resetZoom();
+  };
+
   const [timeUnit, setTimeUnit] = useState<TimeScale>("hour");
 
   const [accessor, setAccessor] = useState<Accessors>("remit");
@@ -37,7 +43,8 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
     currency: "INR",
   });
 
-  const options: React.ComponentProps<typeof Line>["options"] = {
+  const options: LineProps["options"] = {
+    responsive: true,
     maintainAspectRatio: false,
     scales: {
       x: {
@@ -92,7 +99,7 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
   const id = "remittance";
 
   return (
-    <div className="flex min-h-[75vh] w-screen flex-col items-center justify-center gap-8">
+    <div className="flex min-h-[75vh] flex-col items-center justify-center gap-8">
       <div className="stats stats-vertical bg-primary text-primary-content sm:stats-horizontal">
         {Object.entries(data).map(([name, remit]) => {
           if (remit[0]?.data[accessor]) {
@@ -152,11 +159,24 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
               {formatAccessor("forex")}
             </button>
           </div>
+          <div className="btn-group">
+            <button
+              type="button"
+              onClick={resetZoom}
+              className="btn btn-ghost btn-sm"
+            >
+              Reset Zoom
+            </button>
+          </div>
         </div>
         <p className="text-secondary">Data is retained for 4 months.</p>
-        <div className="min-h-[400px] w-[600px] min-w-[95vw]">
-          <ChartComponent data={lineData} options={options} />
-        </div>
+      </div>
+      <div className="min-h-[400px] min-w-[90%]">
+        <ChartComponent
+          forwardedRef={chartRef}
+          data={lineData}
+          options={options}
+        />
       </div>
     </div>
   );
