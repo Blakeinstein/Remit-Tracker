@@ -16,4 +16,4 @@ A simple web-app to track remittance cost across multiple sources.
 3. Setting up notifications on PWA (if cost falls below certain threshold)
 
 ## Contributing
-Check our [contributing guidelines](https://github.com/Blakeinstein/Remit-Tracker/blob/master/CONTRIBUTING.md))
+Check our [contributing guidelines](https://github.com/Blakeinstein/Remit-Tracker/blob/master/CONTRIBUTING.md)
