@@ -20,10 +20,11 @@ All types of contributions are encouraged and valued. See the [Table of Contents
   - [Reporting Bugs](#reporting-bugs)
   - [Suggesting Enhancements](#suggesting-enhancements)
   - [Your First Code Contribution](#your-first-code-contribution)
-  - [Improving The Documentation](#improving-the-documentation)
+    - [Improving the Spider](#improving-the-spider)
+    - [Improving the Web App](#improving-the-web-app)
 - [Styleguides](#styleguides)
   - [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
+  - [Code Formatting](#code-formatting)
 
 
 ## Code of Conduct
@@ -124,14 +125,14 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/Blakei
 ### Your First Code Contribution
 The project has two running parts, the frontend app which fetches information from a zyte project, and the spider package implemented using scrapy.
 
-#### Improving the spider
+#### Improving the Spider
 The `Spider` sub-folder contains the code and the logic for the spider. Consider taking a look there.
 
 1. You need `poetry` setup on your local machine, check their [website](https://python-poetry.org/) in order to set it up.
 2. Read `scrapy` [docs](https://docs.scrapy.org/en/latest/) to figure out how to test spiders locally. This can mostly be achieved by running `poetry run scrapy crawl <spider-name>`.
 3. Look at existing spiders to figure out response type.
 
-#### Improving the frontend app
+#### Improving the Web App
 The frontend is a simple `NextJs` app setup with tailwindcss and DaisyUI.
 
 1. The project requires `NodeJS` setup on your local machine.
@@ -150,7 +151,9 @@ include Setup of env, IDE and typical getting started instructions?
 ### Commit Messages
 All commit messages are configured to be linted by commitlint, refer to their [documentation for their conventional config](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) to find out more.
 
-### Code linters
+### Code Formatting
+
+#### Frontend
 Eslint is setup for the frontend code.
 <!-- TODO
 
