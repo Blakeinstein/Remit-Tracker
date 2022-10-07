@@ -149,6 +149,9 @@ include Setup of env, IDE and typical getting started instructions?
 ## Styleguides
 ### Commit Messages
 All commit messages are configured to be linted by commitlint, refer to their [documentation for their conventional config](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) to find out more.
+
+### Code linters
+Eslint is setup for the frontend code.
 <!-- TODO
 
 -->
