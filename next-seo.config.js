@@ -20,7 +20,7 @@ const defaultSEOConfig = {
   twitter: {
     handle: "@BlaineSensei",
     cardType: "summary_large_image",
-  },
+  }
 };
 
 export default defaultSEOConfig;
