@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaHome } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 import ThemeSelect from "./ThemeSelect";
 
@@ -10,8 +11,13 @@ const Header = () => {
         <div className="flex-1">
           <Link href="/" passHref>
             <a className="btn btn-ghost gap-2 text-lg font-bold">
-              <FaHome />
-              <span className="hidden sm:inline"> Remittance Tracker</span>
+              <Image
+                src="/logo-no-background.svg"
+                height="40"
+                width="40"
+                className="h-12 w-12"
+              />
+              <span className="hidden sm:inline">Remittance Tracker</span>
             </a>
           </Link>
         </div>
