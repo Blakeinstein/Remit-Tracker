@@ -8,6 +8,7 @@ import type { FilteredSources, Accessors, Provider } from "lib/types/Remit";
 import { formatProvider, formatAccessor } from "lib/utils/Remit";
 
 import type { LineProps } from "./Chart";
+import Stats from "./Stats";
 
 const TimeScales = ["hour", "day", "week", "month"] as const;
 
@@ -37,11 +38,6 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
         borderColor: uniqolor(btoa(formatProvider(name as Provider))).color,
       })),
   };
-
-  const formatter = new Intl.NumberFormat("en-IN", {
-    style: "currency",
-    currency: "INR",
-  });
 
   const options: LineProps["options"] = {
     responsive: true,
@@ -100,23 +96,7 @@ const Remittance: React.FC<{ data: FilteredSources }> = ({ data }) => {
 
   return (
     <div className="flex min-h-[75vh] flex-col items-center justify-center gap-8">
-      <div className="stats stats-vertical bg-primary text-primary-content sm:stats-horizontal">
-        {Object.entries(data).map(([name, remit]) => {
-          if (remit[0]?.data[accessor]) {
-            return (
-              <div className="stat sm:w-52" key={name}>
-                <div className="stat-title capitalize">
-                  {formatProvider(name as Provider)}
-                </div>
-                <div className="stat-value text-center">
-                  {formatter.format(remit[0].data[accessor] as number)}
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })}
-      </div>
+      <Stats data={data} accessor={accessor} />
       <div className="flex w-72 min-w-[80vw] flex-col items-center gap-6">
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <div className="form-control">
